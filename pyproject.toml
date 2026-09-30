@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61,<81"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-injection-guard"
+version = "0.1.0"
+description = "Three-layer prompt-injection guard for LLM pipelines that read external content, hold private data and publish output."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Wang Yaoyang" }]
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+embed = ["sentence-transformers>=6.1,<7"]
+test = ["pytest>=8.3,<10"]
+
+[tool.setuptools]
+packages = ["injection_guard"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
